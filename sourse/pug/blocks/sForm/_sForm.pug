@@ -1,0 +1,147 @@
+mixin sForm()
+	// start sForm
+	+b.sForm.section#sForm&attributes(attributes)
+		.container
+			+e.FORM.box.quiz-form-js
+				+sFormStep({
+					stepClasses: 'active',
+					thanks: false,
+					title: "Який обсяг палива ви плануєте закупити?",
+					radioGroupArr: [
+						{
+							checked: false,
+							name: "fuelVolume",
+							txt: "Від 2000л до 10000л",
+						},
+						{
+							checked: false,
+							name: "fuelVolume",
+							txt: "Від 10000л до 20000л",
+						},
+						{
+							checked: false,
+							name: "fuelVolume",
+							txt: "Більше 20000л",
+						},
+					],
+					backMuted: true,
+					forward: true,
+					step: "1/3",
+					addImgClasses: "",
+					img: "step1.jpg",
+				})
+				+sFormStep({
+					thanks: false,
+					title: "Куди потрібна доставка?",
+					radioGroupArr: [
+						{
+							checked: false,
+							name: "delivery",
+							txt: "Черкаська область",
+						},
+						{
+							checked: false,
+							name: "delivery",
+							txt: "Полтавська область",
+						},
+						{
+							checked: false,
+							name: "delivery",
+							txt: "Кіровоградська область",
+						},
+						{
+							checked: false,
+							name: "delivery",
+							txt: "Вінницька область",
+						},
+						{
+							checked: false,
+							name: "delivery",
+							txt: "Інший варіант",
+						},
+					],
+					grayTxt: "*В залежності від місцезнаходження вашого підприємства по області ціна може трохи змінитися",
+					forward: true,
+					step: "2/3",
+					addImgClasses: "bigger",
+					img: "step2.jpg",
+				})
+				+sFormStep({
+					thanks: false,
+					title: "Оберіть зручний спосіб отримання комерційної пропозиції",
+					step3: true,
+					img: "step3.jpg",
+					step: "3/3",
+				})
+				+sFormStep({
+					thanks: true,
+					img: "step4.jpg",
+				})
+	// end sForm
+
+mixin sFormSocItem(img, name, value, addClasses='')
+	.col-auto
+		+e.LABEL.soc-radio.tabs__btn.d-block(class=addClasses)
+			input(type="radio" value=value name=name)&attributes(attributes)
+			img.soc-img(loading="lazy" src=`img/svg/${img}.svg` alt="")
+
+mixin sFormStep(data)
+	+e.step.step-js(class=`${data.stepClasses ? data.stepClasses : ''}`)
+		+e.row.row.gx-0.gy-0
+			+e.col--left.col-md-auto.text-center.text-md-start
+				if !data.thanks
+					+e.title=data.title
+					if data.step3
+						.tabs
+							+e.soc-radio-row.row.align-items-center.tabs__caption
+								+sFormSocItem('soc-tg', 'contactMethod', 'Телеграм', 'active')(checked)
+								+sFormSocItem('soc-viber', 'contactMethod', 'Вайбер')
+								+sFormSocItem('soc-email', 'contactMethod', 'Імейл')
+							+e.inputs.tabs__wrap
+								.tabs__content.active
+									+input('Ваше ім’я', 'text', undefined, 'tgName')
+									+input('+380 (99) 999-99-99', 'tel', undefined, 'tgTel')
+								.tabs__content
+									+input('Ваше ім’я', 'text', undefined, 'viberName')
+									+input('+380 (99) 999-99-99', 'tel', undefined, 'viberTel')
+								.tabs__content
+									+input('Введіть вашу електронну пошту ', 'email', undefined, 'email')
+					else
+						+e.ratio-group
+							- for(let item of data.radioGroupArr)
+								+sFormRadioItem(item)
+					if data.grayTxt
+						+e.gray-txt=data.grayTxt
+					+e.controll-row.row
+						.col-6.col-sm-auto
+							+e.btn--back.back-btn-js(class=`${data.backMuted ? 'disabled' : ''}`)
+								+icon('arrow-left')
+								span Назад
+						.col-6.col-sm-auto
+							if data.forward
+								+e.btn--forward.forward-btn-js.disabled
+									span Далі
+									+icon('arrow-right')
+							else
+								+e.btn--send.send-btn-js.disabled(type="submit") Відправити
+					+e.step-counter=data.step
+				else
+					+e.tahnks
+						+e.t-title Дякуємо
+						+e.t-gray Ми зв’яжемося з Вами протягом дня
+						+e.t-question Виникли запитання?
+						+e.tell(href="tel:+380969668228") +38 096 966 8228
+			+e.col--right.col-md-auto.d-none.d-md-block(class=`${data.addImgClasses ? data.addImgClasses : ''}`)
+				+e.img(class=`${data.addImgClasses ? data.addImgClasses : ''}`)
+					img(loading="lazy" src=`img/@2x/${data.img}` alt="")
+
+mixin sFormRadioItem(item)
+	+e.LABEL.r-item.row.align-items-center.d-flex
+		.col-auto.d-block
+			if item.checked
+				input(type="radio" value=item.txt name=item.name checked)
+			else
+				input(type="radio" value=item.txt name=item.name)
+			.circle
+		.col.d-block
+			+e.r-txt=item.txt

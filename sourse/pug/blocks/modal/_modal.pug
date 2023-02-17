@@ -1,0 +1,15 @@
+include ../sCallback/_sCallback.pug
+
+mixin modal()
+	//  start modals
+	div(id="modal-call" style="display: none")
+		+sCallbackBox()
+	div(id="modal-thanks" style="display: none")
+		+b.callback
+			+e.inner.text-center
+				+b.section-title.text-center.mb-0
+					h2 Дякуюємо
+					p Ми зв'яжемося з Вами протягом дня
+
+	// #modal-call
+	// end modals

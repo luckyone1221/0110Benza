@@ -1,0 +1,32 @@
+mixin sFAQ(data)
+	// start sFAQ
+	+b.SECTION.sFAQ.section#sFAQ&attributes(attributes)
+		.container
+			+b.section-title.text-sm-center
+				h2 Питання, які нам часто задають:
+			+e.dd.dd-group-js
+				+sFAQItem('Чому нам довіряють?', 'active')
+					| 10 років активної діяльності та власний автопарк більше ніж з 20 автомобілів, що постійно курсують між нафтобазами Європи. Можемо оперативно доставити та відвантажити будь яку кількість пального для вашого підприємства.
+				+sFAQItem('Хто наші постійні клієнти?')
+					| Серед них є такі підприємства як: ТОВ Альянс Нафтогаз Енерджі, ТОВ Деметра-Велес, ПрАТ ВК Укрнафтобуріння, ТОВ Прилукиспецбуд, ТОВ Лубенський молочний завод ‘Гармонія’ та інші.
+				+sFAQItem('Чи є сертифікат підтверджуючий якість вашого палива?')
+					| Звісно є, з ним Ви можете ознайомитися за
+					|
+					a(href="#") посиланням
+					|.
+				+sFAQItem('Витяг з ЄДР')
+					| Наш витяг Ви можете знайти за
+					|
+					a(href="#") посиланням
+					| .
+	// end sFAQ
+
+mixin sFAQItem(title, addClasses)
+	+e.item(class=`${addClasses ? addClasses : ""}`)
+		+e.head.dd-head-js
+			.row.gx-4
+				.col=title
+				.col-auto
+					+e.plus
+		+e.content.dd-content-js(class=`${addClasses ? addClasses : ""}`)
+			block

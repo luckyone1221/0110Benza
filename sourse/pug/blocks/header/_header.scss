@@ -1,0 +1,78 @@
+// start .header
+.header {
+	transition: all .3s ease-in-out, padding-right 0s;
+	background-color: $white;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	//width: 100%;
+	width: 100vw;
+
+	border-bottom: 1px solid transparent;
+	&.fixed{
+		border-bottom: 1px solid $gray-300;
+		box-shadow: 0 0 15px -5px rgba($black, .2);
+	}
+
+	padding: rem(12) rem(0);
+	@include media-breakpoint-up(sm){
+		padding: rem(14) rem(0);
+	}
+	@include media-breakpoint-up(md){
+		padding: rem(18) rem(0);
+	}
+	@include media-breakpoint-up(xxl){
+		padding: rem(24) rem(0);
+	}
+
+	&__logo{
+		display: block;
+
+		width: rem(140);
+		@include media-breakpoint-up(sm){
+			width: rem(180);
+		}
+		@include media-breakpoint-up(md){
+			width: rem(232);
+		}
+
+		img{
+			width: 100%;
+		}
+	}
+	&__row{
+		--bs-gutter-x: #{rem(24)};
+	}
+	&__tell{
+		display: block;
+		font-weight: 400;
+		line-height: calc(28/24);
+
+		font-size: rem(14);
+		@include media-breakpoint-up(sm){
+			font-size: rem(18);
+		}
+		@include media-breakpoint-up(lg){
+			font-size: rem(24);
+		}
+		color: $gray-700;
+
+		padding-top: rem(6);
+		@include media-breakpoint-up(sm){
+			padding-top: 0;
+		}
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+
+		@include media-breakpoint-down(sm){
+			padding: rem(8) rem(12);
+			font-size: rem(13);
+			line-height: 1;
+		}
+	}
+	&__{}
+	&__{}
+} // end.header

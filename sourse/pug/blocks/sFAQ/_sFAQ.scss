@@ -1,0 +1,99 @@
+// start .sFAQ
+.sFAQ {
+	--sPT: #{rem(30)};
+	--sPB: #{rem(30)};
+	--sTPB: #{rem(40)};
+	 @include media-breakpoint-up(xl){
+		 --sPT: #{rem(60)};
+		 --sPB: #{rem(60)};
+		 --sTPB: #{rem(46)};
+	 }
+
+	.section-title{
+		font-size: 24px;
+		line-height: calc(28/24);
+	}
+	&__dd{
+		@include media-breakpoint-up(lg){
+			max-width: rem(768);
+			margin: 0 auto;
+		}
+	}
+	&__item{
+		margin-bottom: rem(24);
+		border-bottom: 1px solid $gray-200;
+		padding-bottom: rem(31);
+
+		&:last-child{
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		&.active{
+			--plus-aft-o: 1;
+		}
+	}
+	&__head{
+		cursor: pointer;
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: 1.2;
+		color: $gray-700;
+
+		&:hover{
+			--plus-color: #{$gray-800};
+		}
+	}
+	&__plus{
+		@include mt();
+		width: rem(24);
+		height: rem(24);
+		border-radius: 50%;
+		border: 2px solid var(--plus-color, #{$gray-510});
+
+		position: relative;
+		&:before,
+		&:after{
+			@include mt();
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			background: var(--plus-color, #{$gray-510});
+			border-radius: 2px;
+		}
+
+		&:before{
+			width: rem(10);
+			height: 2px;
+		}
+		&:after{
+			opacity: var(--plus-aft-o, 0);
+			height: rem(10);
+			width: 2px;
+		}
+
+	}
+
+	&__content{
+		@include media-breakpoint-up(lg){
+			padding-right: rem(48);
+		}
+		padding-top: rem(16);
+
+		display: none;
+		&.active{
+			display: block;
+		}
+		color: $gray-600;
+
+		a{
+			font-weight: 700;
+			text-decoration: underline;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+} // end.sFAQ

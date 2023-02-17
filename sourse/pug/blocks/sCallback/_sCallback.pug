@@ -1,0 +1,17 @@
+mixin sCallback(data)
+	// start sCallback
+	+b.SECTION.sCallback.section#sCallback&attributes(attributes)
+		.container
+			+sCallbackBox()
+	// end sCallback
+
+mixin sCallbackBox()
+	+b.callback
+		+e.inner.text-center
+			+b.section-title.text-center
+				h2 Передзвоніть мені
+				p Вкажіть ваш номер телефону нижче і ми зв'яжемося з Вами протягом дня
+			+form-wrap
+				+input('+380 (99) 999-99-99', 'tel')
+				+e.btn(type="submit") Відправити
+			+e.polite 100% конфіденційність

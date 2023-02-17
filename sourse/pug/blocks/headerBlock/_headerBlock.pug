@@ -1,0 +1,17 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+pic('headerBlock-bg.jpg')(class="headerBlock__bg")
+		+e.container.container
+			+b.section-title.text-center
+				h1
+					| Доставка дизельного палива
+					br.d-none.d-md-block
+					| ЄВРО-5 з Європи
+					br.d-none.d-md-block
+					| до вашого підприємства
+			+e.txt-box.text-center
+				+e.txt--bottom-dash Підходить для сільськогосподарської техніки, вантажівок та генераторів
+				+e.txt--arrowed Для отримання точної ціни пройдіть будь ласка коротке опитування:
+
+	// end headerBlock

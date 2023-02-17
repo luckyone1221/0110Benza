@@ -1,0 +1,64 @@
+// start .sCallback
+.sCallback {
+	 --sPT: #{rem(35)};
+
+	--sPB: #{rem(10)};
+	 @include media-breakpoint-up(xl){
+		 --sPB: #{rem(60)};
+	 }
+	--sTPB: #{rem(23)};
+
+	&__{}
+	&__{}
+} // end.sCallback
+
+.callback{
+	background: $gray-110;
+	border-radius: rem(26);
+
+	padding: rem(32) rem(16);
+	@include media-breakpoint-up(sm){
+		padding: rem(40);
+	}
+
+	@include media-breakpoint-up(sm){
+		max-width: rem(636);
+		margin: 0 auto;
+	}
+
+	&__inner{
+		@include media-breakpoint-up(sm){
+			max-width: rem(444);
+			margin: 0 auto;
+		}
+	}
+	.section-title{
+		h2{
+			line-height: calc(28/24);
+			margin-bottom: rem(24);
+		}
+		p{
+			font-size: rem(20);
+			line-height: 1.4;
+
+			color: $gray-600;
+		}
+	}
+	.form-wrap{
+		&__input-wrap{
+			@extend .uaFlag-inp-wrap;
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-primary;
+
+			margin-bottom: rem(20);
+			min-width: 100%;
+		}
+		&__{}
+	}
+	&__polite{
+		line-height: calc(28/16);
+		color: $gray-300;
+	}
+}

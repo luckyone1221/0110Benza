@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Модальные окна</title>
+		<meta name="description" content="Доставка дизельного палива ЄВРО-5 з Європи до вашого підприємства">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="main-wrapper">
+			<main>
+				<div class="section container">
+					<h1>Страница для  демонстрации модальных окон</h1>
+					<div class="row">
+												<div class="col-auto mb-2"><a class="btn btn-primary" href="#" data-src="modal-call" data-fancybox="modal">modal-call</a></div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!--  start modals-->
+		<div id="modal-call" style="display: none">
+			<div class="callback">
+				<div class="callback__inner text-center">
+					<div class="section-title text-center">
+						<h2>Передзвоніть мені</h2>
+						<p>Вкажіть ваш номер телефону нижче і ми зв'яжемося з Вами протягом дня</p>
+					</div>
+					<div class="form-wrap">
+						<form>
+							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+380 (99) 999-99-99"/>
+							</div>
+							<!-- +e.input-wrap-->
+							<button class="form-wrap__btn" type="submit">Відправити
+							</button>
+						</form>
+					</div>
+					<div class="callback__polite">100% конфіденційність
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="modal-thanks" style="display: none">
+			<div class="callback">
+				<div class="callback__inner text-center">
+					<div class="section-title text-center mb-0">
+						<h2>Дякуюємо</h2>
+						<p>Ми зв'яжемося з Вами протягом дня</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<!-- end modals-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

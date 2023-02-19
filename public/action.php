@@ -13,11 +13,8 @@ $mail->CharSet = 'utf-8';
 $mail->setFrom('info@info.com','info info');
 
 //owner email
-$mail->addAddress('');
- // $mail->addAddress('horenkova369@gmail.com');
-// $mail->addAddress('stab@inbox.support');
-
-
+$mail->addAddress('luckyone1221@gmail.com');
+//$mail->addAddress('deriievzakhar@gmail.com');
 
 //Субъект
 $mail->Subject = 'Заявка з сайту EkonTrade';

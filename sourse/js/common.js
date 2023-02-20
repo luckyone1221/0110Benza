@@ -154,14 +154,13 @@ const JSCCommon = {
 				type: 'POST',
 				data: data,
 			}).done(function (data) {
-
 				Fancybox.close();
 				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
 
 				// window.location.replace("/thanks.html");
 				setTimeout(function () {
 					// Done Functions
-					Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
+					// Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
 					// th.trigger("reset");
 
 					// $.magnificPopup.close();
@@ -169,7 +168,8 @@ const JSCCommon = {
 					// yaCounter55828534.reachGoal('zakaz');
 				}, 4000);
 			}).fail(function () {
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
+				// Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
+				console.log('fail');
 			});
 
 		});
@@ -422,23 +422,27 @@ function eventHandler() {
 	let activeStep = 0;
 
 	$(forwardBtns).click(() => {
-		$(steps[activeStep]).slideUp(() => {
-			$(steps[activeStep]).removeClass('active');
-		});
+		// $(steps[activeStep]).slideUp(() => {
+		//
+		// });
+		$(steps[activeStep]).removeClass('active');
 		activeStep++;
-		$(steps[activeStep]).slideDown(() => {
-			$(steps[activeStep]).addClass('active');
-		});
+		// $(steps[activeStep]).slideDown(() => {
+		//
+		// });
+		$(steps[activeStep]).addClass('active');
 	})
 
 	$(backBtns).click(() => {
-		$(steps[activeStep]).slideUp(() => {
-			$(steps[activeStep]).removeClass('active');
-		});
+		$(steps[activeStep]).removeClass('active');
+		// $(steps[activeStep]).slideUp(() => {
+		//
+		// });
 		activeStep--;
-		$(steps[activeStep]).slideDown(() => {
-			$(steps[activeStep]).addClass('active');
-		});
+		// $(steps[activeStep]).slideDown(() => {
+		//
+		// });
+		$(steps[activeStep]).addClass('active');
 	})
 
 	//

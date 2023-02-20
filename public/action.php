@@ -10,10 +10,10 @@ $mail->Encoding = 'base64';
 $mail->CharSet = 'utf-8';
 
 ///who send 
-$mail->setFrom('info@info.com','info info');
+$mail->setFrom('info@info.com','EkonTrade');
 
 //owner email
-$mail->addAddress('luckyone1221@gmail.com');
+$mail->addAddress('deriievzakhar@gmail.com');
 //$mail->addAddress('deriievzakhar@gmail.com');
 
 //Субъект
@@ -88,7 +88,7 @@ $html = '
     //    if (!empty($_POST['utm_campaign'])) {
     //        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> utm_campaign:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['utm_campaign'] . '</b></td>';
     //    }
-     $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">  Время отправки:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $time . '</b></td>
+     $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">  Час Відправки:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $time . '</b></td>
       <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> IP:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_SERVER['REMOTE_ADDR'] . '</b></td> 
 </table>
 ';

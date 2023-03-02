@@ -14,6 +14,7 @@ $mail->setFrom('info@info.com','EkonTrade');
 
 //owner email
 $mail->addAddress('deriievzakhar@gmail.com');
+//$mail->addAddress('luckyone1221@gmail.com');
 //$mail->addAddress('deriievzakhar@gmail.com');
 
 //Субъект
